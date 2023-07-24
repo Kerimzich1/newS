@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <script src='https://widget.p-pay.app' defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+
+        .cart {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart">
+        <h1>Корзина</h1>
+        <p>Ручка - Цена: 100 тенге</p>
+        <!-- Здесь можно добавить другие товары, если необходимо -->
+        <button onclick="openPaymentWidgetHandler();">
+   Оплатить
+ </button>
+    </div>
+
+
+
+
+    <script>
+        function openPaymentWidgetHandler() {
+        const data = {
+          api_key: "b5e02711-96e1-4535-acfc-d14576bc5c6a",
+          amount: 10,
+          currency: "KZT",
+          order_id: "",
+          description: "",
+          payment_type: "pay",
+          payment_method: "ecom",
+          items: [{
+              merchant_id: "e9e151be-380c-4bf3-9d5b-2119d26bacf3",
+              service_id: "15cee0d1-6526-4659-9fdb-e7b214aa8392",
+              merchant_name: "Example",
+              name: "Example",
+              quantity: 1,
+              amount_one_pcs: 10,
+              amount_sum: 10,
+          }],
+          user_id: "string",
+          email: "example@gmail.com",
+          phone: "example",
+          success_url: "success.html",
+          failure_url: "http://example.com",
+          callback_url: "http://example.com",
+          payment_lifetime: 10,
+          create_recurrent_profile: false,
+          recurrent_profile_lifetime: 0,
+          lang: "ru",
+          extra_params: {},
+          payment_gateway_host: "https://api.p-pay.app/",
+          payment_widget_host: "https://widget.p-pay.app"
+        }
+        window.openPaymentWidget(data);
+      }
+    </script>
+
+</body>
+</html>

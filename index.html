@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин ручек</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="product">
+        <h1>Ручка</h1>
+        <img src="ссылканаизображение_ручки.jpg" alt="Ручка">
+        <p>Цена: 100 тенге</p>
+        <button class="btn" onclick="addToCart()">Купить</button>
+    </div>
+
+    <script>
+        function addToCart() {
+            // Здесь можно добавить логику добавления товара в корзину, например, используя JavaScript или отправив запрос на сервер.
+            // В данном примере, мы просто перенаправим пользователя на страницу "cart.html" (эту страницу мы создадим в следующем шаге).
+            window.location.href = "cart.html";
+        }
+    </script>
+</body>
+</html>
